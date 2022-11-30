@@ -6,7 +6,7 @@ const aedes = require('aedes')()
 const mqtt_server = require('net').createServer(aedes.handle)
 const mqtt_port = 1884
 
-const port = 80
+const port = process.argv[2]
 
 // SOCKET IO SERVER DEFINITIONS
 const app = require('express')();
@@ -20,6 +20,7 @@ ios.on('connection',
         // ios.emit("connection","connected successfully");
 
         socket.on("data", (data)=> {  
+
       var dencrypted = AES.decrypt(data,"secret key").toString(crypto.enc.Utf8)
           console.log(dencrypted);
           aedes.publish({ topic: 'temp', dup:true, payload:dencrypted  })
