@@ -31,7 +31,7 @@ ios.on('connection',
 
 
 // MQTT START
-mqtt_server.listen(mqtt_port, function () {
+mqtt_server.listen(mqtt_port,'0.0.0.0', function () {
     console.log('server started and listening on port ', mqtt_port)
     // setInterval(()=>{
     //   // aedes.publish({ topic: 'aedes', dup:true, payload: "dummy message @aedes From broker 1" })
