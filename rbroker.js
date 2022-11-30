@@ -17,7 +17,8 @@ ios.on('connection',
         console.log("Connected " + socket.id )
         // ios.emit("connection","connected successfully");
 
-        socket.on("data", (data)=> {          
+        socket.on("data", (data)=> {     
+          console.log("Got data ",data);     
           aedes.publish({ topic: 'temp', dup:true, payload:data  })
         })
         
@@ -27,7 +28,7 @@ ios.on('connection',
 
 
 // MQTT START
-mqtt_server.listen(mqtt_port, function () {
+mqtt_server.listen(mqtt_port,'0.0.0.0', function () {
     console.log('server started and listening on port ', mqtt_port)
     // setInterval(()=>{
     //   // aedes.publish({ topic: 'aedes', dup:true, payload: "dummy message @aedes From broker 1" })
