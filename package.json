@@ -1,0 +1,20 @@
+{
+  "name": "broker-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "broker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aedes": "^0.45.0",
+    "crypto-js": "^4.1.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mqtt": "^4.2.6",
+    "socket.io": "^4.0.0",
+    "socket.io-client": "^4.0.0"
+  }
+}
