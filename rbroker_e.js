@@ -6,6 +6,7 @@ const aedes = require('aedes')()
 const mqtt_server = require('net').createServer(aedes.handle)
 const mqtt_port = 1884
 
+const port = 80
 
 // SOCKET IO SERVER DEFINITIONS
 const app = require('express')();
@@ -41,7 +42,7 @@ mqtt_server.listen(mqtt_port, function () {
 
   // SOCKET IO SERVER START
 http.listen(
-  3001, () => {
-  console.log('listening on *:' + 3000);
+  port,'0.0.0.0', () => {
+  console.log('listening on *:' + port);
 });
   
